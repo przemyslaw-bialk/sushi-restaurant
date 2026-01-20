@@ -1,0 +1,76 @@
+import { useEffect, useState } from "react";
+import { FiMenu } from "react-icons/fi";
+import { MdClose } from "react-icons/md";
+import logo from "../assets/logo.png";
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // closing menu while resizing
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return (
+    <div className="mx-auto mt-6 max-w-[1200px] px-4">
+      <nav className="text-sushiMain relative flex items-center justify-center">
+        {/* Mobile menu button */}
+        {isOpen ? (
+          <button
+            className="absolute left-0 z-20 block md:hidden"
+            onClick={toggleMenu}
+          >
+            <MdClose size={24} />
+          </button>
+        ) : (
+          <button
+            className="absolute left-0 z-20 block md:hidden"
+            onClick={toggleMenu}
+          >
+            <FiMenu size={24} />
+          </button>
+        )}
+        {/* Mobile menu */}
+        {isOpen ? (
+          <div className="fixed left-0 top-0 z-10 flex min-h-screen w-screen flex-col items-center justify-start gap-5 overflow-y-hidden bg-slate-950 duration-300 ease-in">
+            <img src={logo} className="mt-4 h-12" />
+            <a href="#" className="mt-10" onClick={() => setIsOpen(false)}>
+              menu
+            </a>
+            <span className="hidden md:block">|</span>
+            <a href="#" onClick={() => setIsOpen(false)}>
+              galeria
+            </a>
+            <span className="hidden md:block">|</span>
+            <a href="#" onClick={() => setIsOpen(false)}>
+              kontakt
+            </a>
+          </div>
+        ) : (
+          <div className="fixed left-[-200%] top-0 z-10 flex min-h-screen w-screen flex-col items-center justify-start overflow-y-hidden bg-slate-950 duration-300 ease-in"></div>
+        )}
+        {/* Desktop menu */}
+        <div className="hidden items-center justify-center gap-4 text-center font-semibold uppercase md:flex">
+          <a href="#">menu</a>
+          <span className="hidden md:block">|</span>
+          <a href="#">galeria</a>
+          <span className="hidden md:block">|</span>
+          <a href="#">kontakt</a>
+        </div>
+      </nav>
+    </div>
+  );
+};
+
+export default Navbar;
