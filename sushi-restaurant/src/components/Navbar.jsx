@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import logo from "../assets/logo.png";
+import waves from "../assets/waves.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +25,7 @@ const Navbar = () => {
 
   return (
     <div className="mx-auto mt-6 max-w-[1200px] px-4">
-      <nav className="text-sushiMain relative flex items-center justify-center">
+      <nav className="relative flex items-center justify-center text-sushiMain">
         {/* Mobile menu button */}
         {isOpen ? (
           <button
@@ -56,6 +57,7 @@ const Navbar = () => {
             <a href="#" onClick={() => setIsOpen(false)}>
               kontakt
             </a>
+            <img src={waves} className="fixed bottom-0" />
           </div>
         ) : (
           <div className="fixed left-[-200%] top-0 z-10 flex min-h-screen w-screen flex-col items-center justify-start overflow-y-hidden bg-slate-950 duration-300 ease-in"></div>

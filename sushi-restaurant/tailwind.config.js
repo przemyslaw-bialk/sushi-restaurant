@@ -5,9 +5,7 @@ export default {
     extend: {
       colors: {
         sushiMain: "#FFF",
-        sushiGreen: "#00C851",
-        sushiGold: "#FFD700",
-        sushiDark: "#242424",
+        sushiAccent: "#E8281D",
       },
       fontFamily: {
         sushi: ["Poppins", "sans-serif"],
