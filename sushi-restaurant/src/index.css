@@ -6,9 +6,10 @@
 
 @layer base {
   body {
-    @apply text-sushiMain bg-black;
+    @apply bg-black text-sushiMain;
     font-family: "Poppins", sans-serif;
     margin: 0 auto;
+    background-color: #1c1b17;
   }
 
   *,

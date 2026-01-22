@@ -6,6 +6,8 @@ export default {
       colors: {
         sushiMain: "#FFF",
         sushiAccent: "#E8281D",
+        sushiBrand: "#F7AA47",
+        bgMenu: "#1C1B17",
       },
       fontFamily: {
         sushi: ["Poppins", "sans-serif"],
