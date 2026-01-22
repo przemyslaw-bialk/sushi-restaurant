@@ -3,6 +3,7 @@ import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import logo from "../assets/logo.png";
 import waves from "../assets/waves.png";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,9 +47,9 @@ const Navbar = () => {
         {isOpen ? (
           <div className="fixed left-0 top-0 z-10 flex min-h-screen w-screen flex-col items-center justify-start gap-5 overflow-y-hidden bg-slate-950 duration-300 ease-in">
             <img src={logo} className="mt-4 h-12" />
-            <a href="#" className="mt-10" onClick={() => setIsOpen(false)}>
+            <Link to="/menu" className="mt-10" onClick={() => setIsOpen(false)}>
               menu
-            </a>
+            </Link>
             <span className="hidden md:block">|</span>
             <a href="#" onClick={() => setIsOpen(false)}>
               galeria
@@ -64,7 +65,7 @@ const Navbar = () => {
         )}
         {/* Desktop menu */}
         <div className="hidden items-center justify-center gap-4 text-center font-semibold uppercase md:flex">
-          <a href="#">menu</a>
+          <Link to="/menu">menu</Link>
           <span className="hidden md:block">|</span>
           <a href="#">galeria</a>
           <span className="hidden md:block">|</span>
