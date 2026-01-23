@@ -2,9 +2,9 @@ import Navbar from "../components/Navbar";
 import logo from "../assets/logo_menu.png";
 import bg from "../assets/background_menu.png";
 import { Link } from "react-router";
-import MenuVegan_26 from "../components/MenuVegan_26";
-import MenuVege_32 from "../components/MenuVege_32";
-import HosomakiSet from "../components/HosomakiSet";
+import MenuVegan_26 from "../components/Menu/MenuVegan_26";
+import MenuVege_32 from "../components/Menu/MenuVege_32";
+import HosomakiSet from "../components/Menu/HosomakiSet";
 
 const MenuPage = () => {
   return (
