@@ -14,11 +14,11 @@ const MenuPage = () => {
         backgroundImage: `
     linear-gradient(
       to bottom,
-      rgba(28,27,23,0) 0%,
-      rgba(28,27,23,0.1) 20%,
-      rgba(28,27,23,0.3) 40%,
-      rgba(28,27,23,0.6) 60%,
-      rgba(28,27,23,1) 80%
+      rgba(5, 3, 3, 0) 0%,
+      rgba(5, 3, 3, 0.1) 20%,
+      rgba(5, 3, 3, 0.3) 40%,
+      rgba(5, 3, 3, 0.6) 60%,
+      rgba(5, 3, 3, 1) 80%
     ),
     url(${bg})
   `,
@@ -38,6 +38,7 @@ const MenuPage = () => {
           <HosomakiSet />
         </div>
       </div>
+      <div>test</div>
     </div>
   );
 };

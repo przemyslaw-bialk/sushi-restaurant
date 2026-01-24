@@ -1,14 +1,14 @@
-const HosomakiSet = () => {
+const ClassicSet = () => {
   const menu = {
-    title: "HOSOMAKI SET 40 SZT - 99ZŁ",
+    title: "CLASSIC SET 24 SZT - 105 ZŁ",
     ingredients: [
-      "Hosomaki ogórek 8 szt",
-      "Hosomaki spicy tempura 8 szt",
-      "Hosomaki tuńczyk 8 szt",
-      "Hosomaki łosoś 8 szt",
+      "Gunkan tatar łosoś 2 szt",
       "Hosomaki krewetka w panko 8 szt",
+      "Futomaki crab cream cheese 6 szt (Sałatka krabowa, majonez, awokado, kanpyo, oshinko)",
+      "Uramaki salmon x tosago 8 szt (Łosoś, serek, ogórek, oshinko, top: tosago)",
     ],
   };
+
   return (
     <div className="p-5">
       <h2 className="text-xl font-semibold text-sushiBrand">{menu.title}</h2>
@@ -21,4 +21,4 @@ const HosomakiSet = () => {
   );
 };
 
-export default HosomakiSet;
+export default ClassicSet;
