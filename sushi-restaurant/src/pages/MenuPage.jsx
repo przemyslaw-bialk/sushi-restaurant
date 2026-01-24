@@ -4,8 +4,8 @@ import bg from "../assets/background_menu.png";
 import bg_nigiri from "../assets/background_nigiri.png";
 import bg_sets from "../assets/background_sets.png";
 import { Link } from "react-router";
-import MenuVegan_26 from "../components/Menu/MenuVegan_26";
-import MenuVege_32 from "../components/Menu/MenuVege_32";
+import VeganSet from "../components/Menu/VeganSet";
+import VegeSet from "../components/Menu/VegeSet";
 import HosomakiSet from "../components/Menu/HosomakiSet";
 import StartSet from "../components/Menu/StartSet";
 import FriendSet from "../components/Menu/FriendsSet";
@@ -21,6 +21,7 @@ import ShareSet from "../components/Menu/ShareSet";
 import PartySet from "../components/Menu/PartySet";
 import EventSet from "../components/Menu/EventSet";
 import CelebrationSet from "../components/Menu/CelebrationSet";
+import RollsMenu from "../components/RollsMenu";
 
 const MenuPage = () => {
   return (
@@ -49,8 +50,8 @@ const MenuPage = () => {
         </Link>
         <Navbar />
         <div className="mt-[17%] flex flex-col items-start justify-center md:items-start md:justify-start">
-          <MenuVegan_26 />
-          <MenuVege_32 />
+          <VeganSet />
+          <VegeSet />
           <ClassicSet />
           <HosomakiSet />
           <CrispySet />
@@ -108,12 +109,8 @@ const MenuPage = () => {
           <CelebrationSet />
         </div>
       </div>
-      <div className="relative m-auto max-w-[1200px]">
-        <h3 className="ml-5 mt-5 text-left text-3xl font-bold">ROLLS</h3>
-        <PankoSet />
-        <SalmonSet />
-        <GrillSet />
-      </div>
+
+      <RollsMenu />
     </div>
   );
 };

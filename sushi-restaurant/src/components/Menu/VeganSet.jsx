@@ -1,4 +1,4 @@
-const MenuVegan26 = () => {
+const VeganSet = () => {
   const menu = {
     title: "VEGAN SET 26 SZT - 99 ZŁ",
     ingredients: [
@@ -27,4 +27,4 @@ const MenuVegan26 = () => {
   );
 };
 
-export default MenuVegan26;
+export default VeganSet;
