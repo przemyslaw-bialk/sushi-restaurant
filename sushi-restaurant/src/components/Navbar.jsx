@@ -45,7 +45,7 @@ const Navbar = () => {
         )}
         {/* Mobile menu */}
         {isOpen ? (
-          <div className="fixed left-0 top-0 z-10 flex min-h-screen w-screen flex-col items-center justify-start gap-5 overflow-y-hidden bg-slate-950 duration-300 ease-in">
+          <div className="fixed left-0 top-0 z-10 flex min-h-screen w-screen flex-col items-center justify-start gap-5 overflow-y-hidden bg-bgMenu duration-300 ease-in">
             <img src={logo} className="mt-4 h-12" />
             <Link to="/menu" className="mt-10" onClick={() => setIsOpen(false)}>
               menu
@@ -61,7 +61,7 @@ const Navbar = () => {
             <img src={waves} className="fixed bottom-0" />
           </div>
         ) : (
-          <div className="fixed left-[-200%] top-0 z-10 flex min-h-screen w-screen flex-col items-center justify-start overflow-y-hidden bg-slate-950 duration-300 ease-in"></div>
+          <div className="fixed left-[-200%] top-0 z-10 flex min-h-screen w-screen flex-col items-center justify-start overflow-y-hidden bg-bgMenu duration-300 ease-in"></div>
         )}
         {/* Desktop menu */}
         <div className="hidden items-center justify-center gap-4 text-center font-semibold uppercase md:flex">
