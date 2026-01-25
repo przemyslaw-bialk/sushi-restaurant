@@ -22,6 +22,7 @@ import PartySet from "../components/Menu/PartySet";
 import EventSet from "../components/Menu/EventSet";
 import CelebrationSet from "../components/Menu/CelebrationSet";
 import RollsMenu from "../components/RollsMenu";
+import FadeInWhenVisible from "../components/FadeInWhenVisible";
 
 const MenuPage = () => {
   return (
@@ -49,13 +50,15 @@ const MenuPage = () => {
           <img src={logo} className="mt-5 h-7" alt="Logo" />
         </Link>
         <Navbar />
-        <div className="mt-[17%] flex flex-col items-start justify-center md:items-start md:justify-start">
-          <VeganSet />
-          <VegeSet />
-          <ClassicSet />
-          <HosomakiSet />
-          <CrispySet />
-        </div>
+        <FadeInWhenVisible>
+          <div className="mt-[17%] flex flex-col items-start justify-center md:items-start md:justify-start">
+            <VeganSet />
+            <VegeSet />
+            <ClassicSet />
+            <HosomakiSet />
+            <CrispySet />
+          </div>
+        </FadeInWhenVisible>
       </div>
       <div
         className="bg-cover bg-center bg-no-repeat"
@@ -73,20 +76,24 @@ const MenuPage = () => {
     `,
         }}
       >
-        <div className="m-auto flex max-w-[1200px] flex-col items-start justify-center md:items-start md:justify-start">
-          <FriendSet />
-          <StartSet />
-          <TempuraSet />
-          <FutomakiSet />
-          <FutomakiXLSet />
+        <FadeInWhenVisible>
+          <div className="m-auto flex max-w-[1200px] flex-col items-start justify-center md:items-start md:justify-start">
+            <FriendSet />
+            <StartSet />
+            <TempuraSet />
+            <FutomakiSet />
+            <FutomakiXLSet />
+          </div>
+        </FadeInWhenVisible>
+      </div>
+      <FadeInWhenVisible>
+        <div className="relative m-auto max-w-[1200px]">
+          <PankoSet />
+          <SalmonSet />
+          <GrillSet />
+          <ShareSet />
         </div>
-      </div>
-      <div className="relative m-auto max-w-[1200px]">
-        <PankoSet />
-        <SalmonSet />
-        <GrillSet />
-        <ShareSet />
-      </div>
+      </FadeInWhenVisible>
       <div
         className="bg-cover bg-center bg-no-repeat"
         style={{
@@ -103,14 +110,17 @@ const MenuPage = () => {
     `,
         }}
       >
-        <div className="m-auto flex max-w-[1200px] flex-col items-start justify-center md:items-start md:justify-start">
-          <PartySet />
-          <EventSet />
-          <CelebrationSet />
-        </div>
+        <FadeInWhenVisible>
+          <div className="m-auto flex max-w-[1200px] flex-col items-start justify-center md:items-start md:justify-start">
+            <PartySet />
+            <EventSet />
+            <CelebrationSet />
+          </div>
+        </FadeInWhenVisible>
       </div>
-
-      <RollsMenu />
+      <FadeInWhenVisible>
+        <RollsMenu />
+      </FadeInWhenVisible>
     </div>
   );
 };

@@ -51,7 +51,7 @@ const Navbar = () => {
               menu
             </Link>
             <span className="hidden md:block">|</span>
-            <a href="#" onClick={() => setIsOpen(false)}>
+            <a href="#gallery" onClick={() => setIsOpen(false)}>
               galeria
             </a>
             <span className="hidden md:block">|</span>
@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className="fade mt-2 hidden items-center justify-center gap-4 text-center font-semibold uppercase md:flex">
           <Link to="/menu">menu</Link>
           <span className="hidden md:block">|</span>
-          <a href="#">galeria</a>
+          <a href="#gallery">galeria</a>
           <span className="hidden md:block">|</span>
           <a href="#">kontakt</a>
         </div>

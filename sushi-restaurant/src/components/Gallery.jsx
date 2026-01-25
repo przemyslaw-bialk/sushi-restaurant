@@ -80,7 +80,7 @@ const Carousel = () => {
       className="mx-auto flex h-[600px] w-full items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="w-full max-w-[1200px] px-4">
+      <div className="w-full max-w-[1200px] px-4" id="gallery">
         <Slider {...settings}>
           {images.map((img, index) => (
             <div key={index} className="px-3">
