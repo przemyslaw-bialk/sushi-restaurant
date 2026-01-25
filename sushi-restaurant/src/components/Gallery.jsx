@@ -38,24 +38,36 @@ const images = [
 ];
 
 const Carousel = () => {
+  const [mounted, setMounted] = useState(false);
+  const [slidesToShow, setSlidesToShow] = useState(3);
+
+  // without this gallery displays at first 3 slides instead of 1 due to problem with a library
+  useEffect(() => {
+    const width = window.innerWidth;
+    if (width <= 768) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setSlidesToShow(1);
+    } else {
+      setSlidesToShow(3);
+    }
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
   const settings = {
-    lazyLoad: "ondemand",
+    lazyLoad: true,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-
     infinite: true,
     speed: 500,
-
-    slidesToShow: 3, // 💻 DESKTOP
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
-
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-
     responsive: [
       {
-        breakpoint: 768, // 📱 MOBILE
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
         },
@@ -76,7 +88,7 @@ const Carousel = () => {
                 src={img}
                 alt={`slide ${index}`}
                 loading="lazy"
-                className="h-[330px] w-full rounded-2xl object-cover shadow-[0_0_25px_rgba(239,127,26,0.45)] transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-[0_0_45px_rgba(239,127,26,0.75)]"
+                className="h-[330px] w-full rounded-2xl object-cover"
               />
             </div>
           ))}
