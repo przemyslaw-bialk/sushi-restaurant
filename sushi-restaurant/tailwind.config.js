@@ -7,7 +7,6 @@ export default {
         sushiMain: "#FFF",
         sushiAccent: "#E8281D",
         sushiBrand: "#F7AA47",
-
         bgMenu: "#050303",
       },
       fontFamily: {

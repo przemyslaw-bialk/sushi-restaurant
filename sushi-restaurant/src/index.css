@@ -31,7 +31,7 @@
 .sushi {
   display: inline-block;
   animation: sushi-roll 1.2s forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.25s;
 }
 
 @keyframes fade {

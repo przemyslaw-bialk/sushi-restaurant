@@ -46,7 +46,7 @@ const MenuPage = () => {
           to="/"
           className="absolute left-6 top-0 hidden h-10 w-auto md:block"
         >
-          <img src={logo} className="h-7" alt="Logo" />
+          <img src={logo} className="mt-5 h-7" alt="Logo" />
         </Link>
         <Navbar />
         <div className="mt-[17%] flex flex-col items-start justify-center md:items-start md:justify-start">

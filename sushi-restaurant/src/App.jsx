@@ -1,9 +1,11 @@
 import HeroSection from "./components/HeroSection";
+import OrderByPhone from "./components/OrderByPhone";
 
 export default function App() {
   return (
-    <div className="bg-sushiDark text-sushiGold flex h-screen flex-col items-start justify-center gap-4">
+    <div>
       <HeroSection />
+      <OrderByPhone />
     </div>
   );
 }

@@ -18,7 +18,7 @@ const HeroSection = () => {
 
           <img
             src={logo}
-            className="fade mt-24 w-[240px] md:ml-[4rem] md:mt-32 md:w-[360px]"
+            className="fade mt-24 w-[240px] md:ml-[4rem] md:mt-14 md:w-[360px]"
             alt="logo"
           />
 
@@ -41,7 +41,7 @@ const HeroSection = () => {
           </div>
 
           {/* ICONS */}
-          <div className="fade mt-6 flex gap-4 md:ml-[4rem]">
+          <div className="fade mt-6 flex gap-4 pb-6 md:ml-[4rem]">
             <a
               href="https://www.facebook.com/people/SEA-ROLL/61585226447408/"
               target="_blank"
