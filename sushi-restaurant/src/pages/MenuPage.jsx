@@ -52,11 +52,12 @@ const MenuPage = () => {
         <Navbar />
         <FadeInWhenVisible>
           <div className="mt-[17%] flex flex-col items-start justify-center md:items-start md:justify-start">
-            <VeganSet />
+            <RollsMenu />
+            {/* <VeganSet />
             <VegeSet />
             <ClassicSet />
             <HosomakiSet />
-            <CrispySet />
+            <CrispySet /> */}
           </div>
         </FadeInWhenVisible>
       </div>
@@ -118,9 +119,7 @@ const MenuPage = () => {
           </div>
         </FadeInWhenVisible>
       </div>
-      <FadeInWhenVisible>
-        <RollsMenu />
-      </FadeInWhenVisible>
+      <FadeInWhenVisible></FadeInWhenVisible>
     </div>
   );
 };

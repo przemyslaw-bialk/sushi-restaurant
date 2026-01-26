@@ -12,7 +12,10 @@ const Contact = () => {
       style={{ backgroundImage: `url(${bg})` }}
       className="h-screen bg-cover bg-center bg-no-repeat"
     >
-      <div className="m-auto flex max-w-[1200px] flex-col items-center justify-center px-4 md:items-start md:pl-8">
+      <div
+        className="m-auto flex max-w-[1200px] flex-col items-center justify-center px-4 md:items-start md:pl-8"
+        id="contact"
+      >
         <FadeInWhenVisible>
           <h2 className="mt-20 text-center text-3xl font-semibold uppercase md:text-left">
             BĄDŹ Z NAMI <br /> w kontakcie!
