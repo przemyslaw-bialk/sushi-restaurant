@@ -1,32 +1,43 @@
 const CelebrationSet = () => {
   const menu = {
-    title: "CELEBRATION SET 86 SZT - 439 ZŁ",
+    title: "CELEBRATION SET",
+    count: "86 SZT",
+    price: "439 ZŁ",
     ingredients: [
-      "Gunkan tatar łosoś 2 szt",
-      "Gunkan tatar tuńczyk 2 szt",
-      "Nigiri krewetka parzona 2 szt",
-      "Nigiri łosoś 2 szt",
-      "Nigiri awokado 2 szt",
-      "Nigiri węgorz 2 szt",
-      "Hosomaki ogórek 8 szt",
-      "Hosomaki oshinko 8 szt",
-      "Hosomaki tuńczyk 8 szt",
-      "Hosomaki łosoś 8 szt",
-      "Futomaki salmon classic 6 szt (Łosoś, serek, awokado, ogórek, sałata)",
-      "Futomaki crispy shrimp 6 szt (Krewetka w panko, spicy mayo, ogórek, kanpyo, sałata)",
-      "Futomaki spicy tuna 6 szt (Tuńczyk, kimchi, ogórek, szczypiorek)",
-      "Uramaki crab classic 8 szt (Awokado, ogórek, serek, szczypiorek, sezam, top: sałatka krabowa)",
-      "Uramaki crispy rainbow 8 szt (Dorsz w panko, serek, oshinko, top: łosoś, tuńczyk, awokado)",
-      "Uramaki double salmon 8 szt (Łosoś pieczony, spicy mayo, ogórek, top: tatar z łososia)",
+      { name: "Gunkan tatar łosoś", quantity: "2 szt" },
+      { name: "Gunkan tatar tuńczyk", quantity: "2 szt" },
+      { name: "Nigiri krewetka parzona", quantity: "2 szt" },
+      { name: "Nigiri łosoś", quantity: "2 szt" },
+      { name: "Nigiri awokado", quantity: "2 szt" },
+      { name: "Nigiri węgorz", quantity: "2 szt" },
+      { name: "Hosomaki ogórek", quantity: "8 szt" },
+      { name: "Hosomaki oshinko", quantity: "8 szt" },
+      { name: "Hosomaki tuńczyk", quantity: "8 szt" },
+      { name: "Hosomaki łosoś", quantity: "8 szt" },
+      { name: "Futomaki salmon classic", quantity: "6 szt" },
+      { name: "Futomaki crispy shrimp", quantity: "6 szt" },
+      { name: "Futomaki spicy tuna", quantity: "6 szt" },
+      { name: "Uramaki crab classic", quantity: "8 szt" },
+      { name: "Uramaki crispy rainbow", quantity: "8 szt" },
+      { name: "Uramaki double salmon", quantity: "8 szt" },
     ],
   };
 
   return (
     <div className="p-5">
-      <h2 className="text-xl font-semibold text-sushiBrand">{menu.title}</h2>
+      <h2 className="text-xl font-semibold text-sushiBrand">
+        {menu.title}
+        <span className="ml-2 text-sushiBrand">{menu.count}</span>
+        <span className="ml-2 text-sushiMain">- {menu.price}</span>
+      </h2>
+
       <ul className="mt-4 font-thin text-sushiMain">
         {menu.ingredients.map((item, i) => (
-          <li key={i}>{item}</li>
+          <li key={i}>
+            <span className="font-normal">{item.name}</span>
+            {" – "}
+            <span className="font-extralight">{item.quantity}</span>
+          </li>
         ))}
       </ul>
     </div>

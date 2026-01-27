@@ -3,6 +3,7 @@ import logo from "../assets/logo_menu.png";
 import bg from "../assets/background_menu.png";
 import bg_nigiri from "../assets/background_nigiri.png";
 import bg_sets from "../assets/background_sets.png";
+import waves from "../assets/waves.png";
 import { Link } from "react-router";
 import VeganSet from "../components/Menu/VeganSet";
 import VegeSet from "../components/Menu/VegeSet";
@@ -53,11 +54,6 @@ const MenuPage = () => {
         <FadeInWhenVisible>
           <div className="mt-[17%] flex flex-col items-start justify-center md:items-start md:justify-start">
             <RollsMenu />
-            {/* <VeganSet />
-            <VegeSet />
-            <ClassicSet />
-            <HosomakiSet />
-            <CrispySet /> */}
           </div>
         </FadeInWhenVisible>
       </div>
@@ -79,9 +75,12 @@ const MenuPage = () => {
       >
         <FadeInWhenVisible>
           <div className="m-auto flex max-w-[1200px] flex-col items-start justify-center md:items-start md:justify-start">
-            <FriendSet />
-            <StartSet />
-            <TempuraSet />
+            <h3 className="ml-5 mt-5 text-left text-3xl font-bold uppercase">
+              zestawy
+            </h3>
+            <VeganSet />
+            <VegeSet />
+            <HosomakiSet />
             <FutomakiSet />
             <FutomakiXLSet />
           </div>
@@ -89,10 +88,10 @@ const MenuPage = () => {
       </div>
       <FadeInWhenVisible>
         <div className="relative m-auto max-w-[1200px]">
-          <PankoSet />
           <SalmonSet />
+          <TempuraSet />
           <GrillSet />
-          <ShareSet />
+          <PankoSet />
         </div>
       </FadeInWhenVisible>
       <div
@@ -113,13 +112,23 @@ const MenuPage = () => {
       >
         <FadeInWhenVisible>
           <div className="m-auto flex max-w-[1200px] flex-col items-start justify-center md:items-start md:justify-start">
+            <CrispySet />
+            <StartSet />
+            <ClassicSet />
+            <ShareSet />
             <PartySet />
-            <EventSet />
-            <CelebrationSet />
           </div>
         </FadeInWhenVisible>
       </div>
-      <FadeInWhenVisible></FadeInWhenVisible>
+      <FadeInWhenVisible>
+        <div>
+          <div className="m-auto max-w-[1200px]">
+            <EventSet />
+            <CelebrationSet />
+          </div>
+          <img src={waves} className="mt-44 w-full" />
+        </div>
+      </FadeInWhenVisible>
     </div>
   );
 };

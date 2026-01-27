@@ -1,22 +1,33 @@
 const GrillSet = () => {
   const menu = {
-    title: "GRILL SET 38 SZT - 169 ZŁ",
+    title: "GRILL SET",
+    count: "38 SZT",
+    price: "169 ZŁ",
     ingredients: [
-      "Hosomaki łosoś pieczony 8 szt",
-      "Nigiri łosoś opalany 2 szt",
-      "Futomaki crispy shrimp 6 szt (Krewetka w panko, spicy mayo, ogórek, kanpyo, sałata)",
-      "Futomaki spicy x crispy 6 szt (Dorsz w panko, spicy mayo, ogórek, kanpyo, szczypiorek)",
-      "Uramaki salmon x avocado 8 szt (Łosoś pieczony, spicy mayo, ogórek, top: awokado)",
-      "Uramaki teriyaki salmon 8 szt (Awokado, ogórek, kanpyo, majonez, szczypiorek, top: łosoś teriyaki)",
+      { name: "Hosomaki łosoś pieczony", quantity: "8 szt" },
+      { name: "Nigiri łosoś opalany", quantity: "2 szt" },
+      { name: "Futomaki crispy shrimp", quantity: "6 szt" },
+      { name: "Futomaki spicy x crispy", quantity: "6 szt" },
+      { name: "Uramaki salmon x avocado", quantity: "8 szt" },
+      { name: "Uramaki teriyaki salmon", quantity: "8 szt" },
     ],
   };
 
   return (
     <div className="p-5">
-      <h2 className="text-xl font-semibold text-sushiBrand">{menu.title}</h2>
+      <h2 className="text-xl font-semibold text-sushiBrand">
+        {menu.title}
+        <span className="ml-2 text-sushiBrand">{menu.count}</span>
+        <span className="ml-2 text-sushiMain">- {menu.price}</span>
+      </h2>
+
       <ul className="mt-4 font-thin text-sushiMain">
         {menu.ingredients.map((item, i) => (
-          <li key={i}>{item}</li>
+          <li key={i}>
+            <span className="font-normal">{item.name}</span>
+            {" – "}
+            <span className="font-extralight">{item.quantity}</span>
+          </li>
         ))}
       </ul>
     </div>

@@ -1,30 +1,96 @@
 const FutomakiMenu = () => {
   const menu = {
-    title: "FUTOMAKI 6 SZT",
+    title: "FUTOMAKI",
+    count: "6 SZT",
     ingredients: [
-      "Vegan tempura – 28 zł (Warzywa w tempurze, kimchi, awokado)",
-      "Vege cream cheese – 27 zł (Awokado, serek, ogórek, oshinko, sałata)",
-      "Salmon classic – 33 zł (Łosoś, serek, awokado, ogórek, sałata)",
-      "Salmon mango – 31 zł (Łosoś pieczony, mango mayo, ogórek)",
-      "Salmon teriyaki – 31 zł (Łosoś w teriyaki, awokado, ogórek, szczypiorek)",
-      "Salmon tatar – 29 zł (Oshinko, ogórek, szczypiorek, top: tatar z łososia)",
-      "Spicy crab – 29 zł (Sałatka krabowa, majonez, awokado, kanpyo, oshinko)",
-      "Tuna avocado – 35 zł (Tuńczyk, spicy mayo, awokado, sałata, oshinko)",
-      "Spicy tuna – 31 zł (Tuńczyk, kimchi, ogórek, szczypiorek)",
-      "Tuna tatar – 34 zł (Warzywa w tempurze, majonez, top: tatar z tuńczyka)",
-      "Spicy x crispy – 29 zł (Dorsz w panko, spicy mayo, ogórek, kanpyo, szczypiorek)",
-      "Shrimp classic – 34 zł (Krewetka parzona, serek, ogórek, kanpyo)",
-      "Crispy shrimp – 32 zł (Krewetka w panko, spicy mayo, ogórek, kanpyo, sałata)",
-      "Unagi classic – 33 zł (Węgorz unagi, oshinko, ogórek, kanpyo, majonez)",
+      {
+        name: "Vegan tempura",
+        price: "28 zł",
+        description: "(Warzywa w tempurze, kimchi, awokado)",
+      },
+      {
+        name: "Vege cream cheese",
+        price: "27 zł",
+        description: "(Awokado, serek, ogórek, oshinko, sałata)",
+      },
+      {
+        name: "Salmon classic",
+        price: "33 zł",
+        description: "(Łosoś, serek, awokado, ogórek, sałata)",
+      },
+      {
+        name: "Salmon mango",
+        price: "31 zł",
+        description: "(Łosoś pieczony, mango mayo, ogórek)",
+      },
+      {
+        name: "Salmon teriyaki",
+        price: "31 zł",
+        description: "(Łosoś w teriyaki, awokado, ogórek, szczypiorek)",
+      },
+      {
+        name: "Salmon tatar",
+        price: "29 zł",
+        description: "(Oshinko, ogórek, szczypiorek, top: tatar z łososia)",
+      },
+      {
+        name: "Spicy crab",
+        price: "29 zł",
+        description: "(Sałatka krabowa, majonez, awokado, kanpyo, oshinko)",
+      },
+      {
+        name: "Tuna avocado",
+        price: "35 zł",
+        description: "(Tuńczyk, spicy mayo, awokado, sałata, oshinko)",
+      },
+      {
+        name: "Spicy tuna",
+        price: "31 zł",
+        description: "(Tuńczyk, kimchi, ogórek, szczypiorek)",
+      },
+      {
+        name: "Tuna tatar",
+        price: "34 zł",
+        description: "(Warzywa w tempurze, majonez, top: tatar z tuńczyka)",
+      },
+      {
+        name: "Spicy x crispy",
+        price: "29 zł",
+        description: "(Dorsz w panko, spicy mayo, ogórek, kanpyo, szczypiorek)",
+      },
+      {
+        name: "Shrimp classic",
+        price: "34 zł",
+        description: "(Krewetka parzona, serek, ogórek, kanpyo)",
+      },
+      {
+        name: "Crispy shrimp",
+        price: "32 zł",
+        description: "(Krewetka w panko, spicy mayo, ogórek, kanpyo, sałata)",
+      },
+      {
+        name: "Unagi classic",
+        price: "33 zł",
+        description: "(Węgorz unagi, oshinko, ogórek, kanpyo, majonez)",
+      },
     ],
   };
 
   return (
     <div className="p-5">
-      <h2 className="text-xl font-semibold text-sushiBrand">{menu.title}</h2>
+      <h2 className="text-xl font-semibold text-sushiBrand">
+        {menu.title}
+        <span className="ml-2 text-sushiMain">{menu.count}</span>
+      </h2>
+
       <ul className="mt-4 font-thin text-sushiMain">
         {menu.ingredients.map((item, i) => (
-          <li key={i}>{item}</li>
+          <li key={i}>
+            <span className="font-normal">{item.name}</span>
+            {" – "}
+            <span className="font-extralight">{item.price}</span>
+            <p className="italic text-gray-300">{item.description}</p>
+          </li>
         ))}
       </ul>
     </div>

@@ -16,12 +16,12 @@ const Navbar = () => {
   const scrollToGallery = () => {
     if (location.pathname === "/") {
       const el = document.querySelector("#gallery");
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+      if (el) el.scrollIntoView();
     } else {
       navigate("/");
       setTimeout(() => {
         const el = document.querySelector("#gallery");
-        if (el) el.scrollIntoView({ behavior: "smooth" });
+        if (el) el.scrollIntoView();
       }, 50);
     }
   };

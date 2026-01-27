@@ -1,29 +1,40 @@
 const EventSet = () => {
   const menu = {
-    title: "EVENT SET 68 SZT - 349 ZŁ",
+    title: "EVENT SET",
+    count: "68 SZT",
+    price: "349 ZŁ",
     ingredients: [
-      "Gunkan goma wakame 2 szt",
-      "Gunkan tosago 2 szt",
-      "Nigiri łosoś 2 szt",
-      "Nigiri tuńczyk 2 szt",
-      "Nigiri łosoś teriyaki 2 szt",
-      "Hosomaki kanpyo 8 szt",
-      "Hosomaki awokado 8 szt",
-      "Hosomaki sałatka krabowa 8 szt",
-      "Futomaki shrimp classic 6 szt (Krewetka parzona, serek, ogórek, kanpyo)",
-      "Futomaki salmon mango 6 szt (Łosoś pieczony, mango mayo, ogórek)",
-      "Uramaki crispy tuna tatar 8 szt (Warzywa w tempurze, spicy mayo, top: tatar z tuńczyka)",
-      "Uramaki dragon 8 szt (Krewetka w panko, awokado, ogórek, top: węgorz)",
-      "Futomaki spicy tuna almond 6 szt (Tuńczyk, ogórek, spicy mayo)",
+      { name: "Gunkan goma wakame", quantity: "2 szt" },
+      { name: "Gunkan tosago", quantity: "2 szt" },
+      { name: "Nigiri łosoś", quantity: "2 szt" },
+      { name: "Nigiri tuńczyk", quantity: "2 szt" },
+      { name: "Nigiri łosoś teriyaki", quantity: "2 szt" },
+      { name: "Hosomaki kanpyo", quantity: "8 szt" },
+      { name: "Hosomaki awokado", quantity: "8 szt" },
+      { name: "Hosomaki sałatka krabowa", quantity: "8 szt" },
+      { name: "Futomaki shrimp classic", quantity: "6 szt" },
+      { name: "Futomaki salmon mango", quantity: "6 szt" },
+      { name: "Uramaki crispy tuna tatar", quantity: "8 szt" },
+      { name: "Uramaki dragon", quantity: "8 szt" },
+      { name: "Futomaki spicy tuna almond", quantity: "6 szt" },
     ],
   };
 
   return (
     <div className="p-5">
-      <h2 className="text-xl font-semibold text-sushiBrand">{menu.title}</h2>
+      <h2 className="text-xl font-semibold text-sushiBrand">
+        {menu.title}
+        <span className="ml-2 text-sushiBrand">{menu.count}</span>
+        <span className="ml-2 text-sushiMain">- {menu.price}</span>
+      </h2>
+
       <ul className="mt-4 font-thin text-sushiMain">
         {menu.ingredients.map((item, i) => (
-          <li key={i}>{item}</li>
+          <li key={i}>
+            <span className="font-normal">{item.name}</span>
+            {" – "}
+            <span className="font-extralight">{item.quantity}</span>
+          </li>
         ))}
       </ul>
     </div>

@@ -34,7 +34,7 @@ const FutomakiAlmondMenu = () => {
             <span className="font-normal">{item.name}</span>
             {" – "}
             <span className="font-extralight">{item.price}</span>{" "}
-            <span className="italic text-gray-300">{item.description}</span>
+            <p className="italic text-gray-300">{item.description}</p>
           </li>
         ))}
       </ul>

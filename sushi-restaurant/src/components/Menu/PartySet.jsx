@@ -1,25 +1,36 @@
 const PartySet = () => {
   const menu = {
-    title: "PARTY SET 54 SZT - 229 ZŁ",
+    title: "PARTY SET",
+    count: "54 SZT",
+    price: "229 ZŁ",
     ingredients: [
-      "Nigiri tamago 2 szt",
-      "Nigiri węgorz 2 szt",
-      "Hosomaki tuńczyk 8 szt",
-      "Hosomaki łosoś 8 szt",
-      "Futomaki crispy shrimp 6 szt (Krewetka w panko, spicy mayo, ogórek, kanpyo, sałata)",
-      "Futomaki spicy crab 6 szt (Sałatka krabowa, majonez, awokado, kanpyo, oshinko)",
-      "Uramaki crispy tuna 8 szt (Warzywa w tempurze, spicy mayo, top: tatar z tuńczyka)",
-      "Uramaki spicy salmon 8 szt (Kimchi, szczypiorek, ogórek, top: łosoś opalany)",
-      "Futomaki spicy shrimp panko 6 szt (Krewetka parzona, kimchi, ogórek, szczypiorek)",
+      { name: "Nigiri tamago", quantity: "2 szt" },
+      { name: "Nigiri węgorz", quantity: "2 szt" },
+      { name: "Hosomaki tuńczyk", quantity: "8 szt" },
+      { name: "Hosomaki łosoś", quantity: "8 szt" },
+      { name: "Futomaki crispy shrimp", quantity: "6 szt" },
+      { name: "Futomaki spicy crab", quantity: "6 szt" },
+      { name: "Uramaki crispy tuna", quantity: "8 szt" },
+      { name: "Uramaki spicy salmon", quantity: "8 szt" },
+      { name: "Futomaki spicy shrimp panko", quantity: "6 szt" },
     ],
   };
 
   return (
     <div className="p-5">
-      <h2 className="text-xl font-semibold text-sushiBrand">{menu.title}</h2>
+      <h2 className="text-xl font-semibold text-sushiBrand">
+        {menu.title}
+        <span className="ml-2 text-sushiBrand">{menu.count}</span>
+        <span className="ml-2 text-sushiMain">- {menu.price}</span>
+      </h2>
+
       <ul className="mt-4 font-thin text-sushiMain">
         {menu.ingredients.map((item, i) => (
-          <li key={i}>{item}</li>
+          <li key={i}>
+            <span className="font-normal">{item.name}</span>
+            {" – "}
+            <span className="font-extralight">{item.quantity}</span>
+          </li>
         ))}
       </ul>
     </div>

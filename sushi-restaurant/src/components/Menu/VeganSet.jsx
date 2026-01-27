@@ -1,28 +1,34 @@
 const VeganSet = () => {
   const menu = {
-    title: "VEGAN SET 26 SZT - 99 ZŁ",
+    title: "VEGAN SET",
+    count: "26 SZT",
+    price: "99 ZŁ",
     ingredients: [
-      "Gunkan wakame 2 szt",
-      "Nigiri awokado 2 szt",
-      "Hosomaki spicy tempura 8 szt",
-      "Futomaki vegan tempura 6 szt (Warzywa w tempurze, kimchi, awokado)",
-      "Uramaki vegan panko 8 szt (Ogórek, kanpyo, oshinko, vegan spicy mayo)",
+      { name: "Gunkan wakame", quantity: "2 szt" },
+      { name: "Nigiri awokado", quantity: "2 szt" },
+      { name: "Hosomaki spicy tempura", quantity: "8 szt" },
+      { name: "Futomaki vegan tempura", quantity: "6 szt" },
+      { name: "Uramaki vegan panko", quantity: "8 szt" },
     ],
   };
+
   return (
-    <div className="p-1">
-      <div>
-        <div className="rounded-lg bg-black/30 p-4 md:bg-transparent">
-          <h2 className="text-xl font-semibold text-sushiBrand">
-            {menu.title}
-          </h2>
-          <ul className="mt-4 font-thin text-sushiMain">
-            {menu.ingredients.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+    <div className="p-5">
+      <h2 className="text-xl font-semibold text-sushiBrand">
+        {menu.title}
+        <span className="ml-2 text-sushiBrand">{menu.count}</span>
+        <span className="ml-2 text-sushiMain">- {menu.price}</span>
+      </h2>
+
+      <ul className="mt-4 font-thin text-sushiMain">
+        {menu.ingredients.map((item, i) => (
+          <li key={i}>
+            <span className="font-normal">{item.name}</span>
+            {" – "}
+            <span className="font-extralight">{item.quantity}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
