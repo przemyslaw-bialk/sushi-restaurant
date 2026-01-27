@@ -118,14 +118,15 @@ const MenuPage = () => {
             <CrispySet />
             <StartSet />
             <ClassicSet />
+            <FriendSet />
             <ShareSet />
-            <PartySet />
           </div>
         </FadeInWhenVisible>
       </div>
       <FadeInWhenVisible>
         <div>
           <div className="m-auto max-w-[1200px]">
+            <PartySet />
             <EventSet />
             <CelebrationSet />
           </div>

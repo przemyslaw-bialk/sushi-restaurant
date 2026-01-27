@@ -47,7 +47,14 @@ const Navbar = () => {
 
   // disable scroll on mobile when menu is open
   useEffect(() => {
-    document.body.classList.toggle("no-scroll", isOpen);
+    if (isOpen) {
+      // to prevent jumping when scroll is visible
+      setTimeout(() => {
+        document.body.classList.add("no-scroll");
+      }, 300);
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
   }, [isOpen]);
 
   return (
@@ -55,7 +62,7 @@ const Navbar = () => {
       <nav className="relative flex items-center justify-center text-sushiMain">
         {/* mobile menu button */}
         <button
-          className="absolute left-0 z-30 block md:hidden"
+          className="absolute left-0 top-1 z-30 block md:hidden"
           onClick={toggleMenu}
         >
           {isOpen ? <MdClose size={24} /> : <FiMenu size={24} />}
@@ -67,7 +74,14 @@ const Navbar = () => {
             isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
           }`}
         >
-          <img src={logo} alt="logo" className="mt-8 h-12" />
+          <Link to="/">
+            <img
+              src={logo}
+              alt="logo"
+              className="mt-8 h-12"
+              onClick={() => setIsOpen(false)}
+            />
+          </Link>
 
           <Link to="/menu" className="mt-10" onClick={() => setIsOpen(false)}>
             menu

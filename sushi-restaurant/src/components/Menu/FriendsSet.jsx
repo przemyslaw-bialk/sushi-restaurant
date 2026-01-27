@@ -1,22 +1,33 @@
 const FriendsSet = () => {
   const menu = {
-    title: "FRIENDS SET 32 SZT - 179 ZŁ",
+    title: "FRIENDS SET",
+    count: "32 SZT",
+    price: "179 ZŁ",
     ingredients: [
-      "Gunkan goma wakame 2 szt",
-      "Nigiri łosoś 2 szt",
-      "Hosomaki ogórek 8 szt",
-      "Futomaki tuna avocado 6 szt (Tuńczyk, spicy mayo, awokado, oshinko, sałata)",
-      "Uramaki dragon 8 szt (Krewetka w panko, awokado, ogórek, top: węgorz)",
-      "Futomaki salmon tatar panko 6 szt (Tatar z łososia, oshinko, ogórek, szczypiorek)",
+      { name: "Gunkan goma wakame", quantity: "2 szt" },
+      { name: "Nigiri łosoś", quantity: "2 szt" },
+      { name: "Hosomaki ogórek", quantity: "8 szt" },
+      { name: "Futomaki tuna avocado", quantity: "6 szt" },
+      { name: "Uramaki dragon", quantity: "8 szt" },
+      { name: "Futomaki salmon tatar panko", quantity: "6 szt" },
     ],
   };
 
   return (
     <div className="p-5">
-      <h2 className="text-xl font-semibold text-sushiBrand">{menu.title}</h2>
+      <h2 className="text-xl font-semibold text-sushiBrand">
+        {menu.title}
+        <span className="ml-2 text-sushiBrand">{menu.count}</span>
+        <span className="ml-2 text-sushiMain">- {menu.price}</span>
+      </h2>
+
       <ul className="mt-4 font-thin text-sushiMain">
         {menu.ingredients.map((item, i) => (
-          <li key={i}>{item}</li>
+          <li key={i}>
+            <span className="font-normal">{item.name}</span>
+            {" – "}
+            <span className="font-extralight">{item.quantity}</span>
+          </li>
         ))}
       </ul>
     </div>
