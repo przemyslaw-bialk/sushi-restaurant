@@ -4,6 +4,8 @@ import { IoLogoInstagram } from "react-icons/io";
 import { CiClock2 } from "react-icons/ci";
 import { SlLocationPin } from "react-icons/sl";
 import { HiPhone } from "react-icons/hi";
+import { CiMail } from "react-icons/ci";
+
 import FadeInWhenVisible from "./FadeInWhenVisible";
 
 const Contact = () => {
@@ -13,7 +15,7 @@ const Contact = () => {
       className="h-screen bg-cover bg-center bg-no-repeat"
     >
       <div
-        className="m-auto flex max-w-[1200px] flex-col items-center justify-center px-4 md:items-start md:pl-8"
+        className="m-auto flex max-w-[1200px] flex-col items-center justify-center px-4 md:items-start md:pl-12"
         id="contact"
       >
         <FadeInWhenVisible>
@@ -68,6 +70,17 @@ const Contact = () => {
                   className="text-xl font-semibold hover:underline"
                 >
                   +48 724 708 642
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CiMail className="rounded-full bg-sushiAccent p-1 text-4xl text-black" />
+              <div>
+                <a
+                  href="mailto:biuro@searoll.pl"
+                  className="text-xl font-semibold hover:underline"
+                >
+                  biuro@searoll.pl
                 </a>
               </div>
             </div>

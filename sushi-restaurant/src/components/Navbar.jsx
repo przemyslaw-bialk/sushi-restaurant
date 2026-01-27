@@ -7,40 +7,36 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Scroll to gallery
+  // scroll to gallery
   const scrollToGallery = () => {
     if (location.pathname === "/") {
-      const el = document.querySelector("#gallery");
-      if (el) el.scrollIntoView();
+      document.querySelector("#gallery")?.scrollIntoView();
     } else {
       navigate("/");
       setTimeout(() => {
-        const el = document.querySelector("#gallery");
-        if (el) el.scrollIntoView();
+        document.querySelector("#gallery")?.scrollIntoView();
       }, 50);
     }
   };
 
-  // Scroll  to contact
+  // scroll to contact
   const scrollToContact = () => {
     if (location.pathname === "/") {
-      const el = document.querySelector("#contact");
-      if (el) el.scrollIntoView();
+      document.querySelector("#contact")?.scrollIntoView();
     } else {
       navigate("/");
       setTimeout(() => {
-        const el = document.querySelector("#contact");
-        if (el) el.scrollIntoView();
+        document.querySelector("#contact")?.scrollIntoView();
       }, 50);
     }
   };
 
-  // closing mobile menu while resizing
+  // close mobile menu on resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setIsOpen(false);
@@ -49,63 +45,64 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // disable scroll on mobile when menu is open
+  useEffect(() => {
+    document.body.classList.toggle("no-scroll", isOpen);
+  }, [isOpen]);
+
   return (
     <div className="mx-auto max-w-[1200px] p-4">
       <nav className="relative flex items-center justify-center text-sushiMain">
-        {/* Mobile menu button */}
-        {isOpen ? (
-          <button
-            className="absolute left-0 z-20 block md:hidden"
-            onClick={toggleMenu}
-          >
-            <MdClose size={24} />
-          </button>
-        ) : (
-          <button
-            className="absolute left-0 z-20 block md:hidden"
-            onClick={toggleMenu}
-          >
-            <FiMenu size={24} />
-          </button>
-        )}
+        {/* mobile menu button */}
+        <button
+          className="absolute left-0 z-30 block md:hidden"
+          onClick={toggleMenu}
+        >
+          {isOpen ? <MdClose size={24} /> : <FiMenu size={24} />}
+        </button>
 
-        {/* Mobile menu */}
-        {isOpen && (
-          <div className="fixed left-0 top-0 z-10 flex min-h-screen w-screen flex-col items-center justify-start gap-5 overflow-y-hidden bg-bgMenu duration-300 ease-in">
-            <img src={logo} className="mt-8 h-12" />
-            <Link to="/menu" className="mt-10" onClick={() => setIsOpen(false)}>
-              menu
-            </Link>
-            <span className="hidden md:block">|</span>
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                scrollToGallery();
-              }}
-            >
-              galeria
-            </button>
-            <span className="hidden md:block">|</span>
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                scrollToContact();
-              }}
-            >
-              kontakt
-            </button>
-            <img src={waves} className="fixed bottom-0" />
-          </div>
-        )}
+        {/* mobile menu */}
+        <div
+          className={`fixed left-0 top-0 z-20 flex min-h-screen w-screen flex-col items-center gap-6 bg-bgMenu transition-all duration-300 ease-in-out ${
+            isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+          }`}
+        >
+          <img src={logo} alt="logo" className="mt-8 h-12" />
 
-        {/* Desktop menu */}
-        <div className="fade mt-2 hidden items-center justify-center gap-4 text-center font-semibold uppercase md:flex">
+          <Link to="/menu" className="mt-10" onClick={() => setIsOpen(false)}>
+            menu
+          </Link>
+          <button
+            onClick={() => {
+              setIsOpen(false);
+              scrollToGallery();
+            }}
+          >
+            galeria
+          </button>
+          <button
+            onClick={() => {
+              setIsOpen(false);
+              scrollToContact();
+            }}
+          >
+            kontakt
+          </button>
+          <img
+            src={waves}
+            alt="golden waves"
+            className="fixed bottom-0 w-full"
+          />
+        </div>
+
+        {/* desktop menu */}
+        <div className="fade mt-2 hidden items-center gap-4 font-semibold uppercase md:flex">
           <Link to="/menu">menu</Link>
-          <span className="hidden md:block">|</span>
+          <span>|</span>
           <button onClick={scrollToGallery} className="uppercase">
             galeria
           </button>
-          <span className="hidden md:block">|</span>
+          <span>|</span>
           <button onClick={scrollToContact} className="uppercase">
             kontakt
           </button>
