@@ -71,7 +71,9 @@ const Navbar = () => {
         {/* mobile menu */}
         <div
           className={`fixed left-0 top-0 z-20 flex min-h-screen w-screen flex-col items-center gap-6 bg-bgMenu transition-all duration-300 ease-in-out ${
-            isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+            isOpen
+              ? "translate-x-0 opacity-100"
+              : "-translate-x-full opacity-0 "
           }`}
         >
           <Link to="/">
@@ -105,7 +107,7 @@ const Navbar = () => {
           <img
             src={waves}
             alt="golden waves"
-            className="fixed bottom-0 w-full"
+            className="absolute bottom-0 w-full"
           />
         </div>
 

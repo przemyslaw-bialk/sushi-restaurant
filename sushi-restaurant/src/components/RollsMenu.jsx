@@ -10,13 +10,23 @@ const RollsMenu = () => {
   return (
     <div>
       <div className="m-auto max-w-[1200px]">
-        <div className="md:grid md:grid-cols-3">
-          <HosomakiMenu />
-          <NigiriMenu />
-          <FutomakiAlmondMenu />
-          <FutomakiMenu />
-          <UramakiMenu />
-          <div>
+        <div className="grid grid-cols-1 md:grid md:grid-cols-3">
+          <div className="md:order-1">
+            <HosomakiMenu />
+          </div>
+          <div className="md:order-2">
+            <NigiriMenu />
+          </div>
+          <div className="order-last md:order-3">
+            <FutomakiAlmondMenu />
+          </div>
+          <div className="md:order-4">
+            <FutomakiMenu />
+          </div>
+          <div className="md:order-5">
+            <UramakiMenu />
+          </div>
+          <div className="md:order-6">
             <FutomakiPankoMenu />
             <FutomakiTempuraMenu />
           </div>
